@@ -115,10 +115,9 @@
     "postgresqlVersion": {
       "type": "string",
       "allowedValues": [
-        "9.5",
-        "9.6"
+        "11"
       ],
-      "defaultValue": "9.6",
+      "defaultValue": "11",
       "metadata": {
         "description": "PostgreSQL version"
       }
@@ -146,7 +145,7 @@
   },
   "resources": [
     {
-      "comments": "This is the Airflow Linux web app running apache/airflow:2.5.0 Docker image",
+      "comments": "This is the Airflow Linux web app running catalin02/insights_airflow:2.4.3 Docker image",
       "type": "Microsoft.Web/sites",
       "name": "[parameters('siteName')]",
       "apiVersion": "2018-02-01",
@@ -157,7 +156,7 @@
       ],
       "properties": {
         "siteConfig": {
-          "linuxFxVersion": "DOCKER|apache/airflow:2.5.0"
+          "linuxFxVersion": "DOCKER|catalin02/insights_airflow:2.4.3"
         },
         "name": "[parameters('siteName')]",
         "serverFarmId": "[variables('hostingPlanName')]",
